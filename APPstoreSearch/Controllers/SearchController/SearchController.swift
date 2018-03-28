@@ -19,7 +19,7 @@ class SearchController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView?.backgroundColor = .red
+        collectionView?.backgroundColor = .white
         
         // Register Cell classes
         collectionView?.register(CategoryCell.self, forCellWithReuseIdentifier: cellID)

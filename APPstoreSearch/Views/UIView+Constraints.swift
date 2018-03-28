@@ -25,5 +25,33 @@ extension UIView {
         leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: margin.left).isActive = true
         trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -margin.right).isActive = true
     }
+    
+    func setupConstraintsTo(top: NSLayoutYAxisAnchor?, bottom: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, right: NSLayoutXAxisAnchor?,
+                            margin: UIEdgeInsets = .zero) {
+        translatesAutoresizingMaskIntoConstraints = false
+        if let top = top {
+            topAnchor.constraint(equalTo: top, constant: margin.top).isActive = true
+        }
+        if let bottom = bottom {
+            bottomAnchor.constraint(equalTo: bottom, constant: -margin.bottom).isActive = true
+        }
+        if let left = left {
+            leadingAnchor.constraint(equalTo: left, constant: margin.left).isActive = true
+        }
+        if let right = right {
+            trailingAnchor.constraint(equalTo: right, constant: -margin.right).isActive = true
+        }
+    }
+    
+    func sizeConstraints(size: CGSize = .zero) {
+        translatesAutoresizingMaskIntoConstraints = false
+        if size.width != 0 {
+            widthAnchor.constraint(equalToConstant: size.width).isActive = true
+        }
+        if size.height != 0 {
+            heightAnchor.constraint(equalToConstant: size.height).isActive = true
+        }
+    }
+    
 }
 

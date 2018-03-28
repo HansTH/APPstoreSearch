@@ -38,23 +38,46 @@ class CategoryCell: UICollectionViewCell {
     //MARK: - Private methods
     private func setupSubviewsAndConstraints() {
         
-        backgroundColor = .yellow
- 
-        addSubview(appCollectionView)
+        // Add views
+        let views = [categoryLabel, appCollectionView, dividerLineView]
+        views.forEach({ addSubview($0) } )
     
-        appCollectionView.pinEdges(to: self, with: .zero)
+        
+        // Constraints
+        categoryLabel.setupConstraintsTo(top: topAnchor, bottom: nil, left: leadingAnchor, right: nil,
+                                         margin: .init(top: 0, left: 16, bottom: 0, right: 0))
+        
+        appCollectionView.setupConstraintsTo(top: categoryLabel.bottomAnchor, bottom: bottomAnchor, left: leadingAnchor, right: trailingAnchor)
+        
+        dividerLineView.setupConstraintsTo(top: nil, bottom: appCollectionView.bottomAnchor, left: leadingAnchor, right: trailingAnchor,
+                                           margin: .init(top: 0, left: 16, bottom: 0, right: 0))
+        dividerLineView.sizeConstraints(size: .init(width: 0, height: 1))
         
     }
     
     
     
-    //MARK: - View objects
+    //MARK: - UIView objects
     let appCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = .white
         return collectionView
+    }()
+    
+    let categoryLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Category"
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        return label
+    }()
+    
+    let dividerLineView: UIView = {
+        let view  = UIView()
+        view.backgroundColor = .gray
+        return view
     }()
     
     

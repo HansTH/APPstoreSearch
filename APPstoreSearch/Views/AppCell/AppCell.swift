@@ -29,12 +29,64 @@ class AppCell: UICollectionViewCell {
     //MARK: - Private methods
     private func setupSubviewsAndConstraints() {
         
-        backgroundColor = .green
+        
+        // Add Views
+        let views = [appImageView, appNameLabel, developerNameLabel, priceLabel]
+        views.forEach( { addSubview($0)} )
+        
+        
+        // Constraints
+        appImageView.setupConstraintsTo(top: topAnchor, bottom: nil, left: leadingAnchor, right: nil,
+                                        margin: .init(top: 4, left: 0, bottom: 0, right: 0))
+        appImageView.sizeConstraints(size: .init(width: frame.width, height: frame.width))
+        
+        appNameLabel.setupConstraintsTo(top: appImageView.bottomAnchor, bottom: nil, left: leadingAnchor, right: trailingAnchor,
+                                        margin: .init(top: 8, left: 0, bottom: 0, right: 0))
+        
+        developerNameLabel.setupConstraintsTo(top: appNameLabel.bottomAnchor, bottom: nil, left: leadingAnchor, right: trailingAnchor,
+                                        margin: .init(top: 8, left: 0, bottom: 0, right: 0))
+        
+        priceLabel.setupConstraintsTo(top: developerNameLabel.bottomAnchor, bottom: nil, left: leadingAnchor, right: trailingAnchor,
+                                              margin: .init(top: 8, left: 0, bottom: 0, right: 0))
+        
         
     }
     
     
-    //MARK: - View objets
+    //MARK: - UIView objets
+    let appImageView: UIImageView = {
+        let image = UIImage(named: "splitAmount")
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 10
+        imageView.layer.masksToBounds = true
+        return imageView
+    }()
+    
+    let appNameLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Split Amount"
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        return label
+    }()
+    
+    let developerNameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Hans ter Horst"
+        label.textColor = .darkGray
+        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        return label
+    }()
+    
+    let priceLabel: UILabel = {
+        let label = UILabel()
+        label.text = "€0,99"
+        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        return label
+    }()
+    
 
     
 }
