@@ -55,13 +55,29 @@
 			isa = PBXGroup;
 			children = (
 				3A14B5F1206B8867002C4550 /* AppDelegate.swift */,
-				3A14B5F3206B8867002C4550 /* ViewController.swift */,
+				3A14B603206B89E5002C4550 /* SupportFiles */,
+				3A14B605206B8A04002C4550 /* Controllers */,
+			);
+			path = APPstoreSearch;
+			sourceTree = "<group>";
+		};
+		3A14B603206B89E5002C4550 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
 				3A14B5F5206B8867002C4550 /* Main.storyboard */,
 				3A14B5F8206B8867002C4550 /* Assets.xcassets */,
 				3A14B5FA206B8867002C4550 /* LaunchScreen.storyboard */,
 				3A14B5FD206B8867002C4550 /* Info.plist */,
 			);
-			path = APPstoreSearch;
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		3A14B605206B8A04002C4550 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A14B5F3206B8867002C4550 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +292,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GPD5VJXL4C;
-				INFOPLIST_FILE = APPstoreSearch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/APPstoreSearch/SupportFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.HansTH.APPstoreSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -291,7 +308,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GPD5VJXL4C;
-				INFOPLIST_FILE = APPstoreSearch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/APPstoreSearch/SupportFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.HansTH.APPstoreSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
