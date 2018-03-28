@@ -13,6 +13,8 @@ class SearchController: UICollectionViewController {
     //MARK: Private properties
     private let cellID = "cellID"
     
+    let searchController = UISearchController(searchResultsController: nil)
+    
 
     
     //MARK: - SearchController methods
@@ -20,9 +22,23 @@ class SearchController: UICollectionViewController {
         super.viewDidLoad()
         
         collectionView?.backgroundColor = .white
+        navigationItem.title = "APPstore Search"
+        searchController.searchBar.delegate = self
         
         // Register Cell classes
         collectionView?.register(CategoryCell.self, forCellWithReuseIdentifier: cellID)
+        
+        
+        // Setup SearchController
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "Search the App store for ..."
+        searchController.searchBar.becomeFirstResponder()
+        searchController.searchBar.scopeButtonTitles = ["All", "Developer", "Software"]
+        
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
         
     }
 

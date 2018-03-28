@@ -18,6 +18,7 @@
 		3A14B60F206BA4B2002C4550 /* CategoryCell+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14B60E206BA4B2002C4550 /* CategoryCell+UICollectionViewDataSource.swift */; };
 		3A14B611206BA6FF002C4550 /* CategoryCell+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14B610206BA6FF002C4550 /* CategoryCell+UICollectionViewDelegateFlowLayout.swift */; };
 		3A14B615206BA7B8002C4550 /* SearchController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14B614206BA7B8002C4550 /* SearchController+UICollectionViewDelegateFlowLayout.swift */; };
+		3A14B617206BDA41002C4550 /* SearchController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14B616206BDA41002C4550 /* SearchController+UISearchBarDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		3A14B60E206BA4B2002C4550 /* CategoryCell+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryCell+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		3A14B610206BA6FF002C4550 /* CategoryCell+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryCell+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		3A14B614206BA7B8002C4550 /* SearchController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
+		3A14B616206BDA41002C4550 /* SearchController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				3A14B5F3206B8867002C4550 /* SearchController.swift */,
 				3A14B614206BA7B8002C4550 /* SearchController+UICollectionViewDelegateFlowLayout.swift */,
+				3A14B616206BDA41002C4550 /* SearchController+UISearchBarDelegate.swift */,
 			);
 			path = SearchController;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			files = (
 				3A14B60C206B9DC4002C4550 /* AppCell.swift in Sources */,
 				3A14B5F4206B8867002C4550 /* SearchController.swift in Sources */,
+				3A14B617206BDA41002C4550 /* SearchController+UISearchBarDelegate.swift in Sources */,
 				3A14B5F2206B8867002C4550 /* AppDelegate.swift in Sources */,
 				3A14B607206B93F0002C4550 /* CategoryCell.swift in Sources */,
 				3A14B60F206BA4B2002C4550 /* CategoryCell+UICollectionViewDataSource.swift in Sources */,
