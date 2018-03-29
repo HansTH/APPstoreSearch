@@ -1,5 +1,5 @@
 //
-//  SearchController+UICollectionViewDelegateFlowLayout.swift
+//  SearchResultController+UICollectionViewDelegateFlowLayout.swift
 //  APPstoreSearch
 //
 //  Created by Hans ter Horst on 28-03-18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension SearchController: UICollectionViewDelegateFlowLayout {
+extension SearchResultController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         

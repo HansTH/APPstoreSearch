@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         let layout = UICollectionViewFlowLayout()
-        let searchController = SearchController(collectionViewLayout: layout)
-        let navController = UINavigationController(rootViewController: searchController)
+        let searchResultController = SearchResultController(collectionViewLayout: layout)
+        let navController = UINavigationController(rootViewController: searchResultController)
         window?.rootViewController = navController
         
         return true

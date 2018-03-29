@@ -13,6 +13,15 @@ class CategoryCell: UICollectionViewCell {
     //MARK: - Properties
     let appCellID = "appCellID"
     
+    var categoryItem: AppCategory? {
+        didSet {
+            if let category = categoryItem {
+                categoryLabel.text = category.category
+                
+                appCollectionView.reloadData()
+            }
+        }
+    }
     
     
     //MARK: - CategoryCell methods
