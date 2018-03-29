@@ -40,7 +40,7 @@ class SearchResultController: UICollectionViewController {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = "Search the App store for ..."
         searchController.searchBar.becomeFirstResponder()
-        searchController.searchBar.scopeButtonTitles = ["All", "Developer", "Software"]
+        searchController.searchBar.scopeButtonTitles = ["All", "iOS", "iPad", "Mac", "Developer"]
         
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -59,7 +59,7 @@ class SearchResultController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CategoryCell
         
-        let item = searchResults[indexPath.row]
+        let item = searchResults[indexPath.item]
         cell.categoryItem = item
         return cell
     }
@@ -68,18 +68,19 @@ class SearchResultController: UICollectionViewController {
     
     //MARK: - Network
     func iTunesURL(searchText: String, segment: Int) -> URL {
-        
-//        var media = "software"
-//        var entity = "software"
-//        var attribute = "" //softwareDeveloper"
+
         var searchRequest = ""
         switch segment {
         case 1:
             searchRequest = "&media=software&entity=software"
         case 2:
-            searchRequest = "&media=software&entity=software&attribute=softwareDeveloper"
+            searchRequest = "&media=software&entity=iPadSoftware"
+        case 3:
+            searchRequest = "&media=software&entity=macSoftware"
+        case 4:
+            searchRequest = "&media=software&attribute=softwareDeveloper"
         default:
-            searchRequest = "&entity=software"
+            searchRequest = "&media=software"
         }
         
         let countryCode = NSLocale.current.regionCode!
@@ -87,6 +88,7 @@ class SearchResultController: UICollectionViewController {
         let encodedText = text.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         let urlString = "https://itunes.apple.com/search?term=\(encodedText)&country=\(countryCode)\(searchRequest)&limit=200"
         let url = URL(string: urlString)
+        print(url!)
         return url!
     }
     

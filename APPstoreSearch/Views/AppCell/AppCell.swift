@@ -11,7 +11,23 @@ import UIKit
 class AppCell: UICollectionViewCell {
     
     //MARK: - Private properties
+    var downloadTask: URLSessionDownloadTask?
     
+    var app: SearchResult? {
+        didSet {
+            guard let app = app else { return }
+            appTitleLabel.text = app.appTitle
+            developerLabel.text = app.developer
+            
+            priceLabel.text = app.appPrice
+            
+            appImageView.image = UIImage(named: "splitAmount")
+            if let urlString = app.imageSmall,
+                let imageURL = URL(string: urlString){
+                downloadTask = appImageView.loadAppImage(with: imageURL)
+            }
+        }
+    }
     
     
     //MARK: - AppCell methods
@@ -31,7 +47,7 @@ class AppCell: UICollectionViewCell {
         
         
         // Add Views
-        let views = [appImageView, appNameLabel, developerNameLabel, priceLabel]
+        let views = [appImageView, appTitleLabel, developerLabel, priceLabel]
         views.forEach( { addSubview($0)} )
         
         
@@ -40,13 +56,13 @@ class AppCell: UICollectionViewCell {
                                         margin: .init(top: 4, left: 0, bottom: 0, right: 0))
         appImageView.sizeConstraints(size: .init(width: frame.width, height: frame.width))
         
-        appNameLabel.setupConstraintsTo(top: appImageView.bottomAnchor, bottom: nil, left: leadingAnchor, right: trailingAnchor,
+        appTitleLabel.setupConstraintsTo(top: appImageView.bottomAnchor, bottom: nil, left: leadingAnchor, right: trailingAnchor,
                                         margin: .init(top: 8, left: 0, bottom: 0, right: 0))
         
-        developerNameLabel.setupConstraintsTo(top: appNameLabel.bottomAnchor, bottom: nil, left: leadingAnchor, right: trailingAnchor,
+        developerLabel.setupConstraintsTo(top: appTitleLabel.bottomAnchor, bottom: nil, left: leadingAnchor, right: trailingAnchor,
                                         margin: .init(top: 8, left: 0, bottom: 0, right: 0))
         
-        priceLabel.setupConstraintsTo(top: developerNameLabel.bottomAnchor, bottom: nil, left: leadingAnchor, right: trailingAnchor,
+        priceLabel.setupConstraintsTo(top: developerLabel.bottomAnchor, bottom: nil, left: leadingAnchor, right: trailingAnchor,
                                               margin: .init(top: 8, left: 0, bottom: 0, right: 0))
         
         
@@ -63,7 +79,7 @@ class AppCell: UICollectionViewCell {
         return imageView
     }()
     
-    let appNameLabel: UILabel = {
+    let appTitleLabel: UILabel = {
        let label = UILabel()
         label.text = "Split Amount"
         label.textColor = .black
@@ -71,7 +87,7 @@ class AppCell: UICollectionViewCell {
         return label
     }()
     
-    let developerNameLabel: UILabel = {
+    let developerLabel: UILabel = {
         let label = UILabel()
         label.text = "Hans ter Horst"
         label.textColor = .darkGray
