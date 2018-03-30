@@ -10,17 +10,18 @@ import UIKit
 
 extension SearchResultController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        performSearch(searchBar)
+        performSearch()
     }
     
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        performSearch(searchBar)
+        performSearch()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchResults.removeAll()
-        hasSearched = false
-        isLoading = false
+        search.dataTask?.cancel()
+        search.searchResults.removeAll()
+        search.hasSearched = false
+        search.isLoading = false
         collectionView?.reloadData()
     }
 }

@@ -25,7 +25,6 @@ class SearchResult: Codable {
         case genre = "primaryGenreName"
         case developer = "artistName"
         case appTitle = "trackName"
-//        case itemPrice = "trackPrice"
         case currency, price
     
     }
