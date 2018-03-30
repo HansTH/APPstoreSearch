@@ -15,4 +15,12 @@ extension SearchResultController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: view.frame.width, height: 200)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        if search.isLoading || (search.searchResults.count == 0 && search.hasSearched) {
+            return CGSize(width: view.frame.width, height: 80)
+        }
+        
+        return .zero
+    }
 }

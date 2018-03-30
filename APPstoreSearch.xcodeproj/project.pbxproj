@@ -24,6 +24,7 @@
 		3AC583DB206D588200F7DA16 /* UIImageView+URLSessionDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC583DA206D588200F7DA16 /* UIImageView+URLSessionDownloadTask.swift */; };
 		3ACEBB61206CE99800C30D30 /* ResultsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEBB60206CE99800C30D30 /* ResultsArray.swift */; };
 		3ACEBB63206D0B8900C30D30 /* AppCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEBB62206D0B8900C30D30 /* AppCategory.swift */; };
+		3AE213BE206E7D0F0014FCCC /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE213BD206E7D0F0014FCCC /* HeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		3AC583DA206D588200F7DA16 /* UIImageView+URLSessionDownloadTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URLSessionDownloadTask.swift"; sourceTree = "<group>"; };
 		3ACEBB60206CE99800C30D30 /* ResultsArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsArray.swift; sourceTree = "<group>"; };
 		3ACEBB62206D0B8900C30D30 /* AppCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCategory.swift; sourceTree = "<group>"; };
+		3AE213BD206E7D0F0014FCCC /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				3A14B609206B96FA002C4550 /* UIView+Constraints.swift */,
+				3AE213BF206E8A350014FCCC /* HeaderCell */,
 				3A14B60D206BA474002C4550 /* CategoryCell */,
 				3A14B612206BA76F002C4550 /* AppCell */,
 			);
@@ -154,6 +157,14 @@
 				3AA7CEE3206E2E3100C422AF /* Search.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3AE213BF206E8A350014FCCC /* HeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				3AE213BD206E7D0F0014FCCC /* HeaderCell.swift */,
+			);
+			path = HeaderCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A1F364F206CD5F500203A0C /* SearchResult.swift in Sources */,
+				3AE213BE206E7D0F0014FCCC /* HeaderCell.swift in Sources */,
 				3A14B60C206B9DC4002C4550 /* AppCell.swift in Sources */,
 				3AC583DB206D588200F7DA16 /* UIImageView+URLSessionDownloadTask.swift in Sources */,
 				3A14B5F4206B8867002C4550 /* SearchResultController.swift in Sources */,

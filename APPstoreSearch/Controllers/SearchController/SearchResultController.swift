@@ -12,6 +12,7 @@ class SearchResultController: UICollectionViewController {
     
     //MARK: Properties
     private let cellID = "cellID"
+    private let headerCellID = "headerCellID"
     let searchController = UISearchController(searchResultsController: nil)
     let search = Search()
     var downloadTask: URLSessionDownloadTask?
@@ -28,7 +29,7 @@ class SearchResultController: UICollectionViewController {
         
         // Register Cell classes
         collectionView?.register(CategoryCell.self, forCellWithReuseIdentifier: cellID)
-        
+        collectionView?.register(HeaderCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerCellID)
         
         // Setup SearchController
         searchController.dimsBackgroundDuringPresentation = false
@@ -58,13 +59,28 @@ class SearchResultController: UICollectionViewController {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCellID, for: indexPath) as! HeaderCell
+        
+        if search.isLoading {
+            header.loadingIndicator.startAnimating()
+            header.textLabel.text = "Loading..."
+        } else if search.searchResults.count == 0 {
+            header.textLabel.text = "Nothing Found"
+        }
+        
+        return header
+    }
 
-
+    
     
     //MARK: - Methods
     func performSearch() {
         
         if let category = Search.Category(rawValue: searchController.searchBar.selectedScopeButtonIndex) {
+            
+            collectionView?.reloadData()
             
             search.performSearch(with: searchController.searchBar.text!, category: category, completion: { success in
                 if !success {

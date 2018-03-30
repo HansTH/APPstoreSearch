@@ -26,11 +26,16 @@ class Search {
         
         var type: String {
             switch self {
-            case .all: return "&media=software"
-            case .iOS: return "&media=software&entity=software"
-            case .iPad: return "&media=software&entity=iPadSoftware"
-            case .mac: return "&media=software&entity=macSoftware"
-            case .developer: return "&media=software&attribute=softwareDeveloper"
+            case .all:
+                return "&media=software"
+            case .iOS:
+                return "&media=software&entity=software"
+            case .iPad:
+                return "&media=software&entity=iPadSoftware"
+            case .mac:
+                return "&media=software&entity=macSoftware"
+            case .developer:
+                return "&media=software&attribute=softwareDeveloper"
             }
         }
     }
