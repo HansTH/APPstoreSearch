@@ -10,20 +10,14 @@ import UIKit
 
 class SearchResultController: UICollectionViewController {
     
-    //MARK: Private properties
+    //MARK: Properties
     private let cellID = "cellID"
-    
     let searchController = UISearchController(searchResultsController: nil)
-    
     let search = Search()
-//    var searchResults = [AppCategory]()
-//    var dataTask: URLSessionDataTask?
     var downloadTask: URLSessionDownloadTask?
-//    var hasSearched = false
-//    var isLoading = false
-    
 
     
+
     //MARK: - SearchResultController methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +39,7 @@ class SearchResultController: UICollectionViewController {
         
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-        
-        
+               
     }
 
     
@@ -65,20 +58,6 @@ class SearchResultController: UICollectionViewController {
         return cell
     }
     
-    
-    
-
-//
-//    func performSearchRequest(with url: URL) -> Data? {
-//
-//        do {
-//            return try Data(contentsOf: url)
-//        } catch {
-//            showNetworkError()
-//            print("Download error: \(error.localizedDescription)")
-//            return nil
-//        }
-//    }
 
 
     func performSearch() {
