@@ -17,8 +17,25 @@ class Search {
     
     var dataTask: URLSessionTask?
     
-    func performSearch(with searchText: String, category: Int,
-                       completion: @escaping SearchComplete) {
+    enum Category: Int {
+        case all = 0
+        case iOS = 1
+        case iPad = 2
+        case mac = 3
+        case developer = 4
+        
+        var type: String {
+            switch self {
+            case .all: return "&media=software"
+            case .iOS: return "&media=software&entity=software"
+            case .iPad: return "&media=software&entity=iPadSoftware"
+            case .mac: return "&media=software&entity=macSoftware"
+            case .developer: return "&media=software&attribute=softwareDeveloper"
+            }
+        }
+    }
+    
+    func performSearch(with searchText: String, category: Category, completion: @escaping SearchComplete) {
         
         if !searchText.isEmpty {
             dataTask?.cancel()
@@ -26,11 +43,12 @@ class Search {
             hasSearched = true
             searchResults.removeAll()
             
-            let url = self.iTunesURL(searchText: searchText, segment: category)
+            let url = self.iTunesURL(searchText: searchText, category: category)
             
             let session = URLSession.shared
             
             dataTask = session.dataTask(with: url, completionHandler: { (data, response, error) in
+                
                 var success = false
                 if let error = error as NSError?, error.code == -999 {
                     return
@@ -62,26 +80,12 @@ class Search {
     
     
     //MARK: - Network
-    private func iTunesURL(searchText: String, segment: Int) -> URL {
-        
-        var searchRequest = ""
-        switch segment {
-        case 1:
-            searchRequest = "&media=software&entity=software"
-        case 2:
-            searchRequest = "&media=software&entity=iPadSoftware"
-        case 3:
-            searchRequest = "&media=software&entity=macSoftware"
-        case 4:
-            searchRequest = "&media=software&attribute=softwareDeveloper"
-        default:
-            searchRequest = "&media=software"
-        }
+    private func iTunesURL(searchText: String, category: Category) -> URL {
         
         let countryCode = NSLocale.current.regionCode!
         let text = searchText.lowercased()
         let encodedText = text.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        let urlString = "https://itunes.apple.com/search?term=\(encodedText)&country=\(countryCode)\(searchRequest)&limit=200"
+        let urlString = "https://itunes.apple.com/search?term=\(encodedText)&country=\(countryCode)\(category.type)&limit=200"
         let url = URL(string: urlString)
         return url!
     }

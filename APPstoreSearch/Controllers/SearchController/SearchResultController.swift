@@ -60,18 +60,22 @@ class SearchResultController: UICollectionViewController {
     
 
 
+    
+    //MARK: - Methods
     func performSearch() {
-        search.performSearch(with: searchController.searchBar.text!,
-                             category: searchController.searchBar.selectedScopeButtonIndex,
-                             completion: { success in
-                                if !success {
-                                    self.showNetworkError()
-                                }
-                                self.collectionView?.reloadData()
-        })
         
-        collectionView?.reloadData()
-        searchController.searchBar.resignFirstResponder()
+        if let category = Search.Category(rawValue: searchController.searchBar.selectedScopeButtonIndex) {
+            
+            search.performSearch(with: searchController.searchBar.text!, category: category, completion: { success in
+                if !success {
+                    self.showNetworkError()
+                }
+                self.collectionView?.reloadData()
+            })
+            
+            collectionView?.reloadData()
+            searchController.searchBar.resignFirstResponder()
+        }
     }
     
     func showNetworkError() {
