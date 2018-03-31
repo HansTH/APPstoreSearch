@@ -19,9 +19,7 @@ extension SearchResultController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         search.dataTask?.cancel()
-        search.searchResults.removeAll()
-        search.hasSearched = false
-        search.isLoading = false
+        search.state = .notSearchedYet
         collectionView?.reloadData()
     }
 }

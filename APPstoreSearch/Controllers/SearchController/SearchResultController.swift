@@ -47,15 +47,26 @@ class SearchResultController: UICollectionViewController {
     
     //MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return search.searchResults.count
+        switch search.state {
+        case .noResults, .notSearchedYet, .loading:
+            return 0
+        case .results(let list):
+            return list.count
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CategoryCell
         
-        let item = search.searchResults[indexPath.item]
-        cell.categoryItem = item
+        switch search.state {
+        case .noResults, .notSearchedYet, .loading:
+            break
+        case .results(let list):
+            let item = list[indexPath.item]
+            cell.categoryItem = item
+        }
+        
         return cell
     }
     
@@ -63,15 +74,19 @@ class SearchResultController: UICollectionViewController {
         
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCellID, for: indexPath) as! HeaderCell
         
-        if search.hasSearched == false && search.searchResults.isEmpty {
-            header.titleLabel.text = "No search result."
-            header.textLabel.text = "Please make a search request\nby using the search bar above."
-        } else if search.isLoading {
-            header.loadingIndicator.startAnimating()
-            header.titleLabel.text = "Loading..."
-        } else if search.searchResults.count == 0 && search.hasSearched == true {
+        switch search.state {
+        case .noResults:
             header.titleLabel.text = "Nothing found"
             header.textLabel.text = "Please search for something else."
+        case .notSearchedYet:
+            header.titleLabel.text = "No search result."
+            header.textLabel.text = "Please make a search request\nby using the search bar above."
+        case .loading:
+            header.loadingIndicator.startAnimating()
+            header.titleLabel.text = "Loading..."
+            header.textLabel.text = ""
+        case .results(_):
+            break
         }
         
         return header

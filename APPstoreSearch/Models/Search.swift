@@ -11,11 +11,14 @@ import Foundation
 typealias SearchComplete = (Bool) -> Void
 
 class Search {
-    var searchResults = [AppCategory]()
-    var hasSearched = false
-    var isLoading = false
     
     var dataTask: URLSessionTask?
+    var state: State = .notSearchedYet
+    
+    enum State {
+        case notSearchedYet, loading, noResults
+        case results([AppCategory])
+    }
     
     enum Category: Int {
         case all = 0
@@ -44,9 +47,7 @@ class Search {
         
         if !searchText.isEmpty {
             dataTask?.cancel()
-            isLoading = true
-            hasSearched = true
-            searchResults.removeAll()
+            state = .loading
             
             let url = self.iTunesURL(searchText: searchText, category: category)
             
@@ -54,28 +55,27 @@ class Search {
             
             dataTask = session.dataTask(with: url, completionHandler: { (data, response, error) in
                 
+                var newState = State.notSearchedYet
                 var success = false
+                
                 if let error = error as NSError?, error.code == -999 {
                     return
                 }
                 
                 if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let data = data {
                     
-                    self.searchResults = self.parse(data: data)
-                    self.searchResults.sort { $0.category! < $1.category! }
-                    
-                    self.isLoading = false
-                    print("Success")
+                    var searchResults = self.parse(data: data)
+                    if searchResults.isEmpty {
+                        newState = .noResults
+                    } else {
+                        searchResults.sort { $0.category! < $1.category! }
+                        newState = .results(searchResults)
+                    }
                     success = true
                 }
                 
-                if !success {
-                    print("Failure: \(response!)")
-                    self.hasSearched = false
-                    self.isLoading = false
-                }
-                
                 DispatchQueue.main.async {
+                    self.state = newState
                     completion(success)
                 }
             })
