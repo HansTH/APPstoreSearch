@@ -20,13 +20,15 @@ class HeaderCell: UICollectionViewCell {
     }
     
     
+    
     func setupSubviewsAndConstraints() {
         
-        let views = [loadingIndicator, textLabel]
+        let views = [loadingIndicator, titleLabel, textLabel]
         views.forEach( { addSubview($0) } )
         
-        loadingIndicator.setupConstraintsTo(top: nil, bottom: textLabel.topAnchor, left: leadingAnchor, right: trailingAnchor)
-        textLabel.centerConstraints(to: self)
+        loadingIndicator.setupConstraintsTo(top: nil, bottom: titleLabel.topAnchor, left: leadingAnchor, right: trailingAnchor)
+        titleLabel.centerConstraints(to: self)
+        textLabel.setupConstraintsTo(top: nil, bottom: bottomAnchor, left: leadingAnchor, right: trailingAnchor)
     }
     
     let loadingIndicator: UIActivityIndicatorView = {
@@ -35,11 +37,21 @@ class HeaderCell: UICollectionViewCell {
         return indicator
     }()
     
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.textAlignment = .center
+        label.numberOfLines = 1
+        return label
+    }()
+    
     let textLabel: UILabel = {
         let label = UILabel()
         label.textColor = .gray
-        label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textAlignment = .center
+        label.numberOfLines = 2
         return label
     }()
     

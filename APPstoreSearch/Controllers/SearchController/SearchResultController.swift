@@ -15,7 +15,7 @@ class SearchResultController: UICollectionViewController {
     private let headerCellID = "headerCellID"
     let searchController = UISearchController(searchResultsController: nil)
     let search = Search()
-    var downloadTask: URLSessionDownloadTask?
+//    var downloadTask: URLSessionDownloadTask?
 
     
 
@@ -63,11 +63,15 @@ class SearchResultController: UICollectionViewController {
         
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCellID, for: indexPath) as! HeaderCell
         
-        if search.isLoading {
+        if search.hasSearched == false && search.searchResults.isEmpty {
+            header.titleLabel.text = "No search result."
+            header.textLabel.text = "Please make a search request\nby using the search bar above."
+        } else if search.isLoading {
             header.loadingIndicator.startAnimating()
-            header.textLabel.text = "Loading..."
-        } else if search.searchResults.count == 0 {
-            header.textLabel.text = "Nothing Found"
+            header.titleLabel.text = "Loading..."
+        } else if search.searchResults.count == 0 && search.hasSearched == true {
+            header.titleLabel.text = "Nothing found"
+            header.textLabel.text = "Please search for something else."
         }
         
         return header

@@ -24,5 +24,6 @@ extension CategoryCell: UICollectionViewDataSource {
         cell.app = categoryItem?.app[indexPath.item]
         return cell
     }
+
 }
 
