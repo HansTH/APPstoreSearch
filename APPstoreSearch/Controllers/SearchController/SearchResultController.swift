@@ -99,6 +99,7 @@ class SearchResultController: UICollectionViewController {
     func showAppDetailsFor(app: SearchResult) {
         let layout = UICollectionViewFlowLayout()
         let appDetailController = AppDetailController(collectionViewLayout: layout)
+        appDetailController.appDetails = app
         navigationController?.pushViewController(appDetailController, animated: true)
     }
     
