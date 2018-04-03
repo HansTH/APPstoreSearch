@@ -29,7 +29,7 @@
 		3ACEBB61206CE99800C30D30 /* ResultsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEBB60206CE99800C30D30 /* ResultsArray.swift */; };
 		3ACEBB63206D0B8900C30D30 /* AppCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEBB62206D0B8900C30D30 /* AppCategory.swift */; };
 		3AD5B4832070069700AAC936 /* CategoryCell+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD5B4822070069700AAC936 /* CategoryCell+UICollectionViewDelegate.swift */; };
-        3AE213BE206E7D0F0014FCCC /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE213BD206E7D0F0014FCCC /* HeaderCell.swift */; };
+		3AE213BE206E7D0F0014FCCC /* SearchResultHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE213BD206E7D0F0014FCCC /* SearchResultHeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */

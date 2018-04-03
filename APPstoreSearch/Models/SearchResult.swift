@@ -17,6 +17,7 @@ class SearchResult: Codable {
     var imageLarge: String?
     var storeURL: String?
     var genre: String?
+    var description: String?
     
     enum CodingKeys: String, CodingKey {
         case imageSmall = "artworkUrl60"
@@ -25,12 +26,8 @@ class SearchResult: Codable {
         case genre = "primaryGenreName"
         case developer = "artistName"
         case appTitle = "trackName"
-        case currency, price
+        case currency, price, description
     
-    }
-    
-    var name: String {
-        return appTitle ?? ""
     }
     
     var appPrice: String? {
@@ -48,9 +45,3 @@ class SearchResult: Codable {
     }
 }
 
-extension SearchResult: CustomStringConvertible {
-    
-    var description: String {
-        return "Name: \(name), Artist name: \(developer ?? ""), Price: \(appPrice ?? "Free")\n"
-    }
-}

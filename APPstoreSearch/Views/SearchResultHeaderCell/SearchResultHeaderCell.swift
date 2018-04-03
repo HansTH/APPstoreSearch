@@ -1,5 +1,5 @@
 //
-//  HeaderCell.swift
+//  SearchResultHeaderCell.swift
 //  APPstoreSearch
 //
 //  Created by Hans ter Horst on 30-03-18.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class HeaderCell: UICollectionViewCell {
+class SearchResultHeaderCell: UICollectionViewCell {
     
-    //MARK: - HeaderCell methods
+    //MARK: - SearchResultHeaderCell methods
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubviewsAndConstraints()
