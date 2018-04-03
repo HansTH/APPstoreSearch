@@ -10,6 +10,7 @@ import UIKit
 
 class HeaderCell: UICollectionViewCell {
     
+    //MARK: - HeaderCell methods
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubviewsAndConstraints()
@@ -20,8 +21,8 @@ class HeaderCell: UICollectionViewCell {
     }
     
     
-    
-    func setupSubviewsAndConstraints() {
+    //MARK: - Private methods
+    private func setupSubviewsAndConstraints() {
         
         let views = [loadingIndicator, titleLabel, textLabel]
         views.forEach( { addSubview($0) } )
@@ -31,6 +32,8 @@ class HeaderCell: UICollectionViewCell {
         textLabel.setupConstraintsTo(top: nil, bottom: bottomAnchor, left: leadingAnchor, right: trailingAnchor)
     }
     
+    
+    //MARK: - View objects
     let loadingIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
         indicator.activityIndicatorViewStyle = .gray

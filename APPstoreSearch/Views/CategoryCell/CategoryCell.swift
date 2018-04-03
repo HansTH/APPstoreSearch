@@ -12,6 +12,7 @@ class CategoryCell: UICollectionViewCell {
     
     //MARK: - Properties
     let appCellID = "appCellID"
+    var searchResultController = SearchResultController()
     
     var categoryItem: AppCategory? {
         didSet {

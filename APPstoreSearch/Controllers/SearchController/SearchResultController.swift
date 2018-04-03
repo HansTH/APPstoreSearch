@@ -11,7 +11,7 @@ import UIKit
 class SearchResultController: UICollectionViewController {
     
     //MARK: Properties
-    private let cellID = "cellID"
+    private var cellID = "cellID"
     private let headerCellID = "headerCellID"
     let searchController = UISearchController(searchResultsController: nil)
     let search = Search()
@@ -65,6 +65,7 @@ class SearchResultController: UICollectionViewController {
         case .results(let list):
             let item = list[indexPath.item]
             cell.categoryItem = item
+            cell.searchResultController = self
         }
         
         return cell
@@ -95,6 +96,12 @@ class SearchResultController: UICollectionViewController {
     
     
     //MARK: - Methods
+    func showAppDetailsFor(app: SearchResult) {
+        let layout = UICollectionViewFlowLayout()
+        let appDetailController = AppDetailController(collectionViewLayout: layout)
+        navigationController?.pushViewController(appDetailController, animated: true)
+    }
+    
     func performSearch() {
         
         if let category = Search.Category(rawValue: searchController.searchBar.selectedScopeButtonIndex) {
