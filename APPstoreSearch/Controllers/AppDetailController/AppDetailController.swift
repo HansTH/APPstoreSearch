@@ -11,7 +11,7 @@ import UIKit
 class AppDetailController: UICollectionViewController {
     
     private let headerCellID = "headerCellID"
-    private let cellID = "cellID"
+    private let descriptionCellID = "cellID"
     var appDetails: SearchResult?
     
     override func viewDidLoad() {
@@ -20,6 +20,7 @@ class AppDetailController: UICollectionViewController {
         navigationItem.title = "App details"
         collectionView?.backgroundColor = .white
         
+        collectionView?.register(AppDetailDescriptionCell.self, forCellWithReuseIdentifier: descriptionCellID)
         collectionView?.register(AppDetailHeaderCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerCellID)
     }
 
@@ -32,5 +33,19 @@ class AppDetailController: UICollectionViewController {
         return header
     }
     
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.item == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: descriptionCellID, for: indexPath) as! AppDetailDescriptionCell
+            cell.text = appDetails
+            return cell
+        }
+        
+        return UICollectionViewCell()
+    }
     
 }

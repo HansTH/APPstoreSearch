@@ -29,7 +29,7 @@ class SearchResultController: UICollectionViewController {
         
         // Register Cell classes
         collectionView?.register(CategoryCell.self, forCellWithReuseIdentifier: cellID)
-        collectionView?.register(HeaderCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerCellID)
+        collectionView?.register(SearchResultHeaderCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerCellID)
         
         // Setup SearchController
         searchController.dimsBackgroundDuringPresentation = false
@@ -73,7 +73,7 @@ class SearchResultController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCellID, for: indexPath) as! HeaderCell
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCellID, for: indexPath) as! SearchResultHeaderCell
         
         switch search.state {
         case .noResults:
