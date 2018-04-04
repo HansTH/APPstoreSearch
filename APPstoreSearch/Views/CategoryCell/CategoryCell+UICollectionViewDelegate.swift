@@ -16,7 +16,6 @@ extension CategoryCell: UICollectionViewDelegate {
             searchResultController.showAppDetailsFor(app: app)
         }
         
-        print("Selected: \(indexPath)")
     }
     
 }

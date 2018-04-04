@@ -20,6 +20,10 @@
 		3A14B615206BA7B8002C4550 /* SearchResultController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14B614206BA7B8002C4550 /* SearchResultController+UICollectionViewDelegateFlowLayout.swift */; };
 		3A14B617206BDA41002C4550 /* SearchResultController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14B616206BDA41002C4550 /* SearchResultController+UISearchBarDelegate.swift */; };
 		3A1F364F206CD5F500203A0C /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F364E206CD5F500203A0C /* SearchResult.swift */; };
+		3A2C57A62074B56300EF6FE5 /* AppDetailScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C57A52074B56300EF6FE5 /* AppDetailScreenshotCell.swift */; };
+		3A2C57A92074BE1900EF6FE5 /* AppDetailScreenshotImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C57A82074BE1900EF6FE5 /* AppDetailScreenshotImageCell.swift */; };
+		3A2C57AB2074BE8C00EF6FE5 /* AppDetailScreenshotCell+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C57AA2074BE8C00EF6FE5 /* AppDetailScreenshotCell+UICollectionViewDataSource.swift */; };
+		3A2C57AD2074C14D00EF6FE5 /* AppDetailScreenshotCell+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C57AC2074C14D00EF6FE5 /* AppDetailScreenshotCell+UICollectionViewDelegateFlowLayout.swift */; };
 		3A49A6A420736702007F5E58 /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49A6A320736702007F5E58 /* AppDetailController.swift */; };
 		3A49A6A820736D37007F5E58 /* AppDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49A6A720736D37007F5E58 /* AppDetailHeaderCell.swift */; };
 		3A49A6AC20736F5C007F5E58 /* AppDetailController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49A6AB20736F5C007F5E58 /* AppDetailController+UICollectionViewDelegateFlowLayout.swift */; };
@@ -30,6 +34,7 @@
 		3ACEBB63206D0B8900C30D30 /* AppCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEBB62206D0B8900C30D30 /* AppCategory.swift */; };
 		3AD5B4832070069700AAC936 /* CategoryCell+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD5B4822070069700AAC936 /* CategoryCell+UICollectionViewDelegate.swift */; };
 		3AE213BE206E7D0F0014FCCC /* SearchResultHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE213BD206E7D0F0014FCCC /* SearchResultHeaderCell.swift */; };
+		3AF2C1962074E58F00C03C4F /* AppDetailInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2C1952074E58F00C03C4F /* AppDetailInfoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,10 @@
 		3A14B614206BA7B8002C4550 /* SearchResultController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchResultController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		3A14B616206BDA41002C4550 /* SearchResultController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchResultController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
 		3A1F364E206CD5F500203A0C /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		3A2C57A52074B56300EF6FE5 /* AppDetailScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailScreenshotCell.swift; sourceTree = "<group>"; };
+		3A2C57A82074BE1900EF6FE5 /* AppDetailScreenshotImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailScreenshotImageCell.swift; sourceTree = "<group>"; };
+		3A2C57AA2074BE8C00EF6FE5 /* AppDetailScreenshotCell+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDetailScreenshotCell+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		3A2C57AC2074C14D00EF6FE5 /* AppDetailScreenshotCell+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDetailScreenshotCell+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		3A49A6A320736702007F5E58 /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
 		3A49A6A720736D37007F5E58 /* AppDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailHeaderCell.swift; sourceTree = "<group>"; };
 		3A49A6AB20736F5C007F5E58 /* AppDetailController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDetailController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
@@ -58,6 +67,7 @@
 		3ACEBB62206D0B8900C30D30 /* AppCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCategory.swift; sourceTree = "<group>"; };
 		3AD5B4822070069700AAC936 /* CategoryCell+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryCell+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		3AE213BD206E7D0F0014FCCC /* SearchResultHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultHeaderCell.swift; sourceTree = "<group>"; };
+		3AF2C1952074E58F00C03C4F /* AppDetailInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailInfoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +170,17 @@
 			path = SearchResultController;
 			sourceTree = "<group>";
 		};
+		3A2C57A72074BDD100EF6FE5 /* AppDetailScreenshotCell */ = {
+			isa = PBXGroup;
+			children = (
+				3A2C57A52074B56300EF6FE5 /* AppDetailScreenshotCell.swift */,
+				3A2C57AC2074C14D00EF6FE5 /* AppDetailScreenshotCell+UICollectionViewDelegateFlowLayout.swift */,
+				3A2C57AA2074BE8C00EF6FE5 /* AppDetailScreenshotCell+UICollectionViewDataSource.swift */,
+				3A2C57A82074BE1900EF6FE5 /* AppDetailScreenshotImageCell.swift */,
+			);
+			path = AppDetailScreenshotCell;
+			sourceTree = "<group>";
+		};
 		3A49A6AA20736F20007F5E58 /* AppDetailController */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +195,8 @@
 			children = (
 				3A49A6A720736D37007F5E58 /* AppDetailHeaderCell.swift */,
 				3A49A6AF2073C17D007F5E58 /* AppDetailDescriptionCell.swift */,
+				3AF2C1952074E58F00C03C4F /* AppDetailInfoCell.swift */,
+				3A2C57A72074BDD100EF6FE5 /* AppDetailScreenshotCell */,
 			);
 			path = AppDetailCell;
 			sourceTree = "<group>";
@@ -279,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A1F364F206CD5F500203A0C /* SearchResult.swift in Sources */,
+				3AF2C1962074E58F00C03C4F /* AppDetailInfoCell.swift in Sources */,
 				3AE213BE206E7D0F0014FCCC /* SearchResultHeaderCell.swift in Sources */,
 				3A14B60C206B9DC4002C4550 /* AppCell.swift in Sources */,
 				3AC583DB206D588200F7DA16 /* UIImageView+URLSessionDownloadTask.swift in Sources */,
@@ -287,13 +311,17 @@
 				3A14B617206BDA41002C4550 /* SearchResultController+UISearchBarDelegate.swift in Sources */,
 				3ACEBB61206CE99800C30D30 /* ResultsArray.swift in Sources */,
 				3A49A6A420736702007F5E58 /* AppDetailController.swift in Sources */,
+				3A2C57AD2074C14D00EF6FE5 /* AppDetailScreenshotCell+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				3A14B5F2206B8867002C4550 /* AppDelegate.swift in Sources */,
 				3A14B607206B93F0002C4550 /* CategoryCell.swift in Sources */,
 				3A14B60F206BA4B2002C4550 /* CategoryCell+UICollectionViewDataSource.swift in Sources */,
+				3A2C57AB2074BE8C00EF6FE5 /* AppDetailScreenshotCell+UICollectionViewDataSource.swift in Sources */,
 				3A49A6A820736D37007F5E58 /* AppDetailHeaderCell.swift in Sources */,
+				3A2C57A92074BE1900EF6FE5 /* AppDetailScreenshotImageCell.swift in Sources */,
 				3A14B60A206B96FA002C4550 /* UIView+Constraints.swift in Sources */,
 				3A14B611206BA6FF002C4550 /* CategoryCell+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				3A14B615206BA7B8002C4550 /* SearchResultController+UICollectionViewDelegateFlowLayout.swift in Sources */,
+				3A2C57A62074B56300EF6FE5 /* AppDetailScreenshotCell.swift in Sources */,
 				3ACEBB63206D0B8900C30D30 /* AppCategory.swift in Sources */,
 				3A49A6AC20736F5C007F5E58 /* AppDetailController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				3AA7CEE4206E2E3100C422AF /* Search.swift in Sources */,
