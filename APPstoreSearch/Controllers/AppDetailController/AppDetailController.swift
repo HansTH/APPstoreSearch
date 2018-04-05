@@ -19,7 +19,6 @@ class AppDetailController: UICollectionViewController {
     var appDetails: SearchResult?
     
     
-    
     //MARK: - AppDetailController methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +30,8 @@ class AppDetailController: UICollectionViewController {
         collectionView?.register(AppDetailScreenshotCell.self, forCellWithReuseIdentifier: screenshotCellID)
         collectionView?.register(AppDetailInfoCell.self, forCellWithReuseIdentifier: infoCellID)
         collectionView?.register(AppDetailHeaderCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerCellID)
-        
     }
 
-    
     
     //MARK: - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -69,7 +66,6 @@ class AppDetailController: UICollectionViewController {
         default:
             return UICollectionViewCell()
         }
-
     }
     
 }

@@ -44,7 +44,6 @@ class CategoryCell: UICollectionViewCell {
     }
     
     
-    
     //MARK: - Private methods
     private func setupSubviewsAndConstraints() {
         
@@ -64,7 +63,6 @@ class CategoryCell: UICollectionViewCell {
         dividerLineView.sizeConstraints(size: .init(width: 0, height: 1))
         
     }
-    
     
     
     //MARK: - UIView objects

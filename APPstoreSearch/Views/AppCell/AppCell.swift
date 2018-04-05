@@ -10,7 +10,7 @@ import UIKit
 
 class AppCell: UICollectionViewCell {
     
-    //MARK: - Private properties
+    //MARK: - Properties
     var downloadTask: URLSessionDownloadTask?
     
     var app: SearchResult? {
@@ -64,8 +64,7 @@ class AppCell: UICollectionViewCell {
         
         priceLabel.setupConstraintsTo(top: developerLabel.bottomAnchor, bottom: nil, left: leadingAnchor, right: trailingAnchor,
                                               margin: .init(top: 8, left: 0, bottom: 0, right: 0))
-        
-        
+   
     }
     
     

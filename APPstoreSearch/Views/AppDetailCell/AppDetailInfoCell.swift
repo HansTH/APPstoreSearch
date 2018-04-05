@@ -21,7 +21,6 @@ class AppDetailInfoCell: UICollectionViewCell {
     }
     
     
-    
     //MARK: - AppDetailInfoCell
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,7 +31,6 @@ class AppDetailInfoCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     
     //MARK: - Methods
@@ -63,6 +61,18 @@ class AppDetailInfoCell: UICollectionViewCell {
         
     }
     
+    private func createLabels(named: [String], fontSize: CGFloat, weight: UIFont.Weight, textColor: UIColor) -> [UILabel] {
+        
+        return named.map { name in
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.text = name
+            label.textColor = textColor
+            label.numberOfLines = 1
+            label.font = UIFont.systemFont(ofSize: fontSize, weight: weight)
+            return label
+        }
+    }
     
     
     //MARK: - View onjects
@@ -95,19 +105,5 @@ class AppDetailInfoCell: UICollectionViewCell {
         view.backgroundColor = .gray
         return view
     }()
-    
-    private func createLabels(named: [String], fontSize: CGFloat, weight: UIFont.Weight, textColor: UIColor) -> [UILabel] {
-        
-        return named.map { name in
-            let label = UILabel()
-            label.translatesAutoresizingMaskIntoConstraints = false
-            label.text = name
-            label.textColor = textColor
-            label.numberOfLines = 1
-            label.font = UIFont.systemFont(ofSize: fontSize, weight: weight)
-            return label
-        }
-    }
-
     
 }

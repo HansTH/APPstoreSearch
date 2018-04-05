@@ -10,6 +10,7 @@ import UIKit
 
 class AppDetailScreenshotImageCell: UICollectionViewCell {
     
+    //MARK: - Properties
     var downloadTask: URLSessionDownloadTask?
     
     var appScreenshot: String? {
@@ -21,6 +22,8 @@ class AppDetailScreenshotImageCell: UICollectionViewCell {
         }
     }
     
+    
+    //MARK: - AppDetailScreenshotImageCell methods
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -33,7 +36,6 @@ class AppDetailScreenshotImageCell: UICollectionViewCell {
     }
     
     
-    
     //MARK: - Methods
     private func setupSubviewsAndConstraints() {
         
@@ -43,7 +45,6 @@ class AppDetailScreenshotImageCell: UICollectionViewCell {
                                                margin: .init(top: 8, left: 0, bottom: 8, right: 0))
     }
 
-    
     
     //MARK: - View objects
     let screenshotImageView: UIImageView = {

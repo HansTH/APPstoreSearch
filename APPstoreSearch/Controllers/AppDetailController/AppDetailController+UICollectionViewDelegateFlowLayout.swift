@@ -18,7 +18,7 @@ extension AppDetailController: UICollectionViewDelegateFlowLayout {
         case 1:
             return CGSize(width: view.frame.width, height: 400)
         case 2:
-            return CGSize(width: view.frame.width, height: 180)
+            return CGSize(width: view.frame.width, height: 140)
         default:
             return .zero
         }

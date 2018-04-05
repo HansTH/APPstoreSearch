@@ -32,7 +32,6 @@ class AppDetailScreenshotCell: UICollectionViewCell {
     }
     
     
-    
     //MARK: - Methods
     private func setupSubviewsAndConstraints() {
         

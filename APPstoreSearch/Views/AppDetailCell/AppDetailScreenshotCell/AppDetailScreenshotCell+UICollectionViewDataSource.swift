@@ -11,8 +11,7 @@ import UIKit
 extension AppDetailScreenshotCell: UICollectionViewDataSource {
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let count = appScreenshotUrls?.count ?? 0
-            return count
+        return appScreenshotUrls?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -10,6 +10,7 @@ import UIKit
 
 class AppDetailHeaderCell: UICollectionViewCell {
     
+    //MARK: - Properties
     var downloadTask: URLSessionDownloadTask?
     
     var appDetails: SearchResult? {
@@ -31,6 +32,8 @@ class AppDetailHeaderCell: UICollectionViewCell {
         }
     }
     
+    
+    //MARK: - AppDetailHeaderCell methods
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -42,6 +45,7 @@ class AppDetailHeaderCell: UICollectionViewCell {
     }
     
     
+    //MARK: - Methods
     private func setupSubviewsAndConstraints() {
         
         let views = [appImageView, appTitle, developer, appPriceButton, dividerLineView]

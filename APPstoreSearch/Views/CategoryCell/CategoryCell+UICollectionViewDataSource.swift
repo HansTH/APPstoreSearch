@@ -11,17 +11,15 @@ import UIKit
 extension CategoryCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let count = categoryItem?.app.count {
-            return count
-        } else {
-            return 0
-        }
+        return categoryItem?.app.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: appCellID, for: indexPath) as! AppCell
-        cell.app = categoryItem?.app[indexPath.item]
+        if let app = categoryItem?.app[indexPath.item] {
+            cell.app = app
+        }
         return cell
     }
 

@@ -15,7 +15,6 @@ extension CategoryCell: UICollectionViewDelegate {
         if let app = categoryItem?.app[indexPath.item] {
             searchResultController.showAppDetailsFor(app: app)
         }
-        
     }
     
 }

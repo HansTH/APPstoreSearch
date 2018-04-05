@@ -24,4 +24,5 @@ extension SearchResultController: UICollectionViewDelegateFlowLayout {
             return CGSize.zero
         }
     }
+    
 }

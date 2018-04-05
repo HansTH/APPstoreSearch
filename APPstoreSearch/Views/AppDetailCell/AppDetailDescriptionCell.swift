@@ -19,7 +19,6 @@ class AppDetailDescriptionCell: UICollectionViewCell {
     }
     
     
-    
     //MARK: - AppDetailDescriptionCell methods
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +28,6 @@ class AppDetailDescriptionCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     
     //MARK: - Methods

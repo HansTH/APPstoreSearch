@@ -15,8 +15,6 @@ class SearchResultController: UICollectionViewController {
     private let headerCellID = "headerCellID"
     let searchController = UISearchController(searchResultsController: nil)
     let search = Search()
-//    var downloadTask: URLSessionDownloadTask?
-
     
 
     //MARK: - SearchResultController methods
@@ -42,10 +40,9 @@ class SearchResultController: UICollectionViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
                
     }
-
     
     
-    //MARK: UICollectionViewDataSource
+    //MARK: - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch search.state {
         case .noResults, .notSearchedYet, .loading:
@@ -67,7 +64,6 @@ class SearchResultController: UICollectionViewController {
             cell.categoryItem = item
             cell.searchResultController = self
         }
-        
         return cell
     }
     
@@ -89,11 +85,9 @@ class SearchResultController: UICollectionViewController {
         case .results(_):
             break
         }
-        
         return header
     }
 
-    
     
     //MARK: - Methods
     func showAppDetailsFor(app: SearchResult) {
