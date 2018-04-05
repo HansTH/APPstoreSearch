@@ -18,6 +18,13 @@ class SearchResult: Codable {
     var storeURL: String?
     var genre: String?
     var description: String?
+    var size: String?
+    var updated: String?
+    var version: String?
+    var seller: String?
+    var minimumOSVersion: String?
+    var rating: String?
+    var screenshotUrls: [String]?
     
     enum CodingKeys: String, CodingKey {
         case imageSmall = "artworkUrl60"
@@ -26,8 +33,12 @@ class SearchResult: Codable {
         case genre = "primaryGenreName"
         case developer = "artistName"
         case appTitle = "trackName"
+        case size = "fileSizeBytes"
+        case updated = "currentVersionReleaseDate"
+        case seller = "sellerName"
+        case rating = "contentAdvisoryRating"
         case currency, price, description
-    
+        case version, screenshotUrls, minimumOSVersion
     }
     
     var appPrice: String? {
