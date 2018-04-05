@@ -45,14 +45,12 @@ class SearchResult: Codable {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.currencyCode = currency
-        var currentPrice: String
         let somePrice = price ?? 0
-        if somePrice == 0 {
-            currentPrice = "Free"
+        if somePrice != 0 {
+            return formatter.string(from: somePrice as NSNumber)!
         } else {
-            currentPrice = formatter.string(from: somePrice as NSNumber)!
+            return "Free"
         }
-        return currentPrice
     }
     
     var appSize: String {
