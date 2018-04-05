@@ -11,7 +11,7 @@ import UIKit
 extension AppDetailScreenshotCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: 200, height: 400 - titleLabel.frame.height)
+            return CGSize(width: 200, height: 390 - titleLabel.frame.height)
     }
     
     // Margin to the begin and end of the collection view

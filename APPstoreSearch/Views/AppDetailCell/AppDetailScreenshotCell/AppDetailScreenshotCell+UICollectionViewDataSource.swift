@@ -9,14 +9,18 @@
 import UIKit
 
 extension AppDetailScreenshotCell: UICollectionViewDataSource {
-    
+        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        let count = appScreenshotUrls?.count ?? 0
+            return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: screenshotImageCellID, for: indexPath) as! AppDetailScreenshotImageCell
+        if let screenshot = appScreenshotUrls?[indexPath.item] {
+            cell.appScreenshot = screenshot
+        }
         return cell
     }
     

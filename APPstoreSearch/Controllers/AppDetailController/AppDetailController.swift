@@ -15,6 +15,7 @@ class AppDetailController: UICollectionViewController {
     private let descriptionCellID = "cellID"
     private let screenshotCellID = "screenshotCellID"
     private let infoCellID = "infoCellID"
+    
     var appDetails: SearchResult?
     
     
@@ -40,7 +41,6 @@ class AppDetailController: UICollectionViewController {
         
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCellID, for: indexPath) as! AppDetailHeaderCell
         header.appDetails = appDetails
-        header.backgroundColor = .white
         
         return header
     }
@@ -58,6 +58,9 @@ class AppDetailController: UICollectionViewController {
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: screenshotCellID, for: indexPath) as! AppDetailScreenshotCell
+            if let screenshot = appDetails?.screenshotUrls {
+                cell.appScreenshotUrls = screenshot
+            }
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: infoCellID, for: indexPath) as! AppDetailInfoCell

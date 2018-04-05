@@ -10,6 +10,17 @@ import UIKit
 
 class AppDetailScreenshotImageCell: UICollectionViewCell {
     
+    var downloadTask: URLSessionDownloadTask?
+    
+    var appScreenshot: String? {
+        didSet {
+            if let urlString = appScreenshot,
+                let imageURL = URL(string: urlString){
+                downloadTask = screenshotImageView.loadAppImage(with: imageURL)
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -37,7 +48,6 @@ class AppDetailScreenshotImageCell: UICollectionViewCell {
     //MARK: - View objects
     let screenshotImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .blue
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()

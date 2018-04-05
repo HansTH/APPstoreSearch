@@ -12,7 +12,7 @@ class AppDetailScreenshotCell: UICollectionViewCell {
     
     //MARK: - Properties
     let screenshotImageCellID = "screenshotImageCellID"
-    
+    var appScreenshotUrls: [String]?
     
     
     //MARK: - AppDetailScreenshotCell methods
