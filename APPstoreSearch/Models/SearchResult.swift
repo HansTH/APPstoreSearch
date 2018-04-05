@@ -41,18 +41,40 @@ class SearchResult: Codable {
         case version, screenshotUrls, minimumOSVersion
     }
     
-    var appPrice: String? {
+    var appPrice: String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.currencyCode = currency
-        var currentPrice: String?
+        var currentPrice: String
         let somePrice = price ?? 0
         if somePrice == 0 {
             currentPrice = "Free"
         } else {
-            currentPrice = formatter.string(from: somePrice as NSNumber)
+            currentPrice = formatter.string(from: somePrice as NSNumber)!
         }
         return currentPrice
+    }
+    
+    var appSize: String {
+        let formatter = ByteCountFormatter()
+        formatter.allowedUnits = .useMB
+        if let size = size, let byte = Int64(size) {
+            return formatter.string(fromByteCount: byte)
+        } else {
+            return "Unkown"
+        }
+    }
+    
+    var lastUpdate: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        formatter.locale = .current
+        if let date = formatter.date(from: updated!) {
+            formatter.dateStyle = .medium
+            return formatter.string(from: date)
+        } else {
+            return "Unknown"
+        }
     }
 }
 
