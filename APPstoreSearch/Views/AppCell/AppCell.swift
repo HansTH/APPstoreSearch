@@ -22,7 +22,7 @@ class AppCell: UICollectionViewCell {
             priceLabel.text = app.appPrice
             
             appImageView.image = UIImage(named: "splitAmount")
-            if let urlString = app.imageSmall,
+            if let urlString = app.imageLarge,
                 let imageURL = URL(string: urlString){
                 downloadTask = appImageView.loadAppImage(with: imageURL)
             }

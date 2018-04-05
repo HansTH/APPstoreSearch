@@ -11,10 +11,11 @@ import UIKit
 class AppDetailInfoCell: UICollectionViewCell {
     
     //MARK: - Properties
-    var info: [String]? {
+    var info: SearchResult? {
         didSet {
             guard let info = info else {return}
-            let labels = createLabels(named: info, fontSize: 14, weight: .regular, textColor: .black)
+            let information: [String] = [info.seller!, info.genre!, info.lastUpdate, info.version!, info.appSize, info.rating!]
+            let labels = createLabels(named: information, fontSize: 14, weight: .regular, textColor: .black)
             labels.forEach({infoLabelStackView.addArrangedSubview($0)})
         }
     }
@@ -38,7 +39,7 @@ class AppDetailInfoCell: UICollectionViewCell {
     private func setupSubviewsAndConstraints() {
         
         let titleNameLabels = ["Seller","Category","Updated","Version","Size","Rating"]
-        let labels = createLabels(named: titleNameLabels, fontSize: 13, weight: .regular, textColor: .gray)
+        let labels = createLabels(named: titleNameLabels, fontSize: 14, weight: .regular, textColor: .gray)
         labels.forEach( { titleLabelStackView.addArrangedSubview($0)} )
         
         let views = [titleLabel, titleLabelStackView, infoLabelStackView, dividerLineView]
@@ -47,19 +48,18 @@ class AppDetailInfoCell: UICollectionViewCell {
         titleLabel.setupConstraintsTo(top: topAnchor, bottom: nil, left: leadingAnchor, right: trailingAnchor,
                                       margin: .init(top: 0, left: 16, bottom: 0, right: 0))
         
-        titleLabelStackView.setupConstraintsTo(top: titleLabel.bottomAnchor, bottom: bottomAnchor,
+        titleLabelStackView.setupConstraintsTo(top: titleLabel.bottomAnchor, bottom: nil,
                                                left: leadingAnchor, right: nil,
-                                               margin: .init(top: 8, left: 16, bottom: 16, right: 0))
+                                               margin: .init(top: 8, left: 16, bottom: 0, right: 0))
         titleLabelStackView.sizeConstraints(size: .init(width: 80, height: 0))
         
-        infoLabelStackView.setupConstraintsTo(top: titleLabelStackView.topAnchor, bottom: titleLabelStackView.bottomAnchor,
+        infoLabelStackView.setupConstraintsTo(top: titleLabelStackView.topAnchor, bottom: nil,
                                               left: titleLabelStackView.trailingAnchor, right: trailingAnchor,
                                               margin: .init(top: 0, left: 8, bottom: 0, right: 16))
         
         dividerLineView.setupConstraintsTo(top: nil, bottom: bottomAnchor, left: leadingAnchor, right: trailingAnchor,
                                            margin: .init(top: 0, left: 16, bottom: 0, right: 0))
         dividerLineView.sizeConstraints(size: .init(width: 0, height: 0.5))
-
         
     }
     
@@ -78,14 +78,14 @@ class AppDetailInfoCell: UICollectionViewCell {
     let titleLabelStackView: UIStackView = {
        let stackView = UIStackView()
         stackView.alignment = .trailing
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
         stackView.axis = .vertical
         return stackView
     }()
     let infoLabelStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.alignment = .leading
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
         stackView.axis = .vertical
         return stackView
     }()

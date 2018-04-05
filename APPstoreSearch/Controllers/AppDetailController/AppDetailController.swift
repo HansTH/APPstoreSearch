@@ -61,8 +61,7 @@ class AppDetailController: UICollectionViewController {
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: infoCellID, for: indexPath) as! AppDetailInfoCell
-            let titleNameLabels = ["Seller","Category","Updated","Version","Size","Rating"]
-            cell.info = titleNameLabels
+            cell.info = appDetails
             return cell
         default:
             return UICollectionViewCell()
