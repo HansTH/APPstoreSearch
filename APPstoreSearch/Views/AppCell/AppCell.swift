@@ -21,7 +21,7 @@ class AppCell: UICollectionViewCell {
             
             priceLabel.text = app.appPrice
             
-            appImageView.image = UIImage(named: "splitAmount")
+            appImageView.image = UIImage(named: "Placeholder")
             if let urlString = app.imageLarge,
                 let imageURL = URL(string: urlString){
                 downloadTask = appImageView.loadAppImage(with: imageURL)
@@ -70,7 +70,7 @@ class AppCell: UICollectionViewCell {
     
     //MARK: - UIView objets
     let appImageView: UIImageView = {
-        let image = UIImage(named: "splitAmount")
+        let image = UIImage(named: "Placeholder")
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 10
