@@ -28,6 +28,8 @@
 		3A49A6A820736D37007F5E58 /* AppDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49A6A720736D37007F5E58 /* AppDetailHeaderCell.swift */; };
 		3A49A6AC20736F5C007F5E58 /* AppDetailController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49A6AB20736F5C007F5E58 /* AppDetailController+UICollectionViewDelegateFlowLayout.swift */; };
 		3A49A6B02073C17D007F5E58 /* AppDetailDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49A6AF2073C17D007F5E58 /* AppDetailDescriptionCell.swift */; };
+		3A871AE02080A017000FD18F /* AppsByCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A871ADF2080A017000FD18F /* AppsByCategoryController.swift */; };
+		3A871AE22080A05E000FD18F /* AppsByCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A871AE12080A05E000FD18F /* AppsByCategoryCell.swift */; };
 		3AA7CEE4206E2E3100C422AF /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA7CEE3206E2E3100C422AF /* Search.swift */; };
 		3AC583DB206D588200F7DA16 /* UIImageView+URLSessionDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC583DA206D588200F7DA16 /* UIImageView+URLSessionDownloadTask.swift */; };
 		3ACEBB61206CE99800C30D30 /* ResultsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEBB60206CE99800C30D30 /* ResultsArray.swift */; };
@@ -61,6 +63,8 @@
 		3A49A6A720736D37007F5E58 /* AppDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailHeaderCell.swift; sourceTree = "<group>"; };
 		3A49A6AB20736F5C007F5E58 /* AppDetailController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDetailController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		3A49A6AF2073C17D007F5E58 /* AppDetailDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailDescriptionCell.swift; sourceTree = "<group>"; };
+		3A871ADF2080A017000FD18F /* AppsByCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppsByCategoryController.swift; path = APPstoreSearch/CONTROLLERS/AppsByCategoryController.swift; sourceTree = SOURCE_ROOT; };
+		3A871AE12080A05E000FD18F /* AppsByCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppsByCategoryCell.swift; path = APPstoreSearch/VIEWS/AppsByCategoryCell.swift; sourceTree = SOURCE_ROOT; };
 		3AA7CEE3206E2E3100C422AF /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		3AC583DA206D588200F7DA16 /* UIImageView+URLSessionDownloadTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URLSessionDownloadTask.swift"; sourceTree = "<group>"; };
 		3ACEBB60206CE99800C30D30 /* ResultsArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsArray.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			children = (
 				3A14B613206BA794002C4550 /* SearchResultController */,
 				3A49A6AA20736F20007F5E58 /* AppDetailController */,
+				3A871ADF2080A017000FD18F /* AppsByCategoryController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 				3A14B60D206BA474002C4550 /* CategoryCell */,
 				3A14B612206BA76F002C4550 /* AppCell */,
 				3A49A6B12073C19F007F5E58 /* AppDetailCell */,
+				3A871AE12080A05E000FD18F /* AppsByCategoryCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A871AE22080A05E000FD18F /* AppsByCategoryCell.swift in Sources */,
 				3A1F364F206CD5F500203A0C /* SearchResult.swift in Sources */,
 				3AF2C1962074E58F00C03C4F /* AppDetailInfoCell.swift in Sources */,
 				3AE213BE206E7D0F0014FCCC /* SearchResultHeaderCell.swift in Sources */,
@@ -311,6 +318,7 @@
 				3A14B617206BDA41002C4550 /* SearchResultController+UISearchBarDelegate.swift in Sources */,
 				3ACEBB61206CE99800C30D30 /* ResultsArray.swift in Sources */,
 				3A49A6A420736702007F5E58 /* AppDetailController.swift in Sources */,
+				3A871AE02080A017000FD18F /* AppsByCategoryController.swift in Sources */,
 				3A2C57AD2074C14D00EF6FE5 /* AppDetailScreenshotCell+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				3A14B5F2206B8867002C4550 /* AppDelegate.swift in Sources */,
 				3A14B607206B93F0002C4550 /* CategoryCell.swift in Sources */,

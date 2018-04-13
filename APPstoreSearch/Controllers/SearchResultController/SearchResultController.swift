@@ -42,6 +42,18 @@ class SearchResultController: UICollectionViewController {
     }
     
     
+    //MARK: - UICollectionViewDelegate
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch search.state {
+        case .noResults, .notSearchedYet, .loading:
+            break
+        case .results(let list):
+            let apps = list[indexPath.item].app
+            showAppsByCategory(apps: apps)
+        }
+    }
+    
+    
     //MARK: - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch search.state {
@@ -95,6 +107,12 @@ class SearchResultController: UICollectionViewController {
         let appDetailController = AppDetailController(collectionViewLayout: layout)
         appDetailController.appDetails = app
         navigationController?.pushViewController(appDetailController, animated: true)
+    }
+    
+    func showAppsByCategory(apps: [SearchResult]) {
+        let appsByCategoryController = AppsByCategoryController()
+        appsByCategoryController.apps = apps
+        navigationController?.pushViewController(appsByCategoryController, animated: true)
     }
     
     func performSearch() {
